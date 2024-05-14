@@ -1,7 +1,7 @@
 import os
 from huggingface_hub import snapshot_download
 os.makedirs("/home/user/app/ckpts", exist_ok=True)
-snapshot_download(repo_id="Tencent-Hunyuan/HunyuanDiT", local_folder="/home/user/app/ckpts")
+snapshot_download(repo_id="Tencent-Hunyuan/HunyuanDiT", local_dir="/home/user/app/ckpts")
 
 import gradio as gr
 import pandas as pd
