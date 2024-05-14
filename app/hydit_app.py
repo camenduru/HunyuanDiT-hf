@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from hydit.constants import SAMPLER_FACTORY
 from sample_t2i import inferencer
+import spaces
 
 ROOT = Path(__file__).parent.parent
 SAMPLERS = list(SAMPLER_FACTORY.keys())
@@ -31,7 +32,7 @@ def get_strings(lang):
 args, gen, enhancer = inferencer()
 strings = get_strings("en")
 
-
+@spaces.GPU
 def infer(
     prompt,
     negative_prompt,
@@ -41,7 +42,8 @@ def infer(
     oriW, oriH,
     sampler,
     size,
-    enhance
+    enhance,
+    progress=gr.Progress(track_tqdm=True)
 ):
     if enhance and enhancer is not None:
         success, enhanced_prompt = enhancer(prompt)
@@ -95,7 +97,7 @@ def ui():
                 prompt = gr.Textbox(label=strings['prompt'], value=strings['default prompt'], lines=3)
                 with gr.Row():
                     infer_steps = gr.Slider(
-                        label=strings['infer steps'], minimum=1, maximum=200, value=100, step=1,
+                        label=strings['infer steps'], minimum=1, maximum=200, value=50, step=1,
                     )
                     seed = gr.Number(
                         label=strings['seed'], minimum=-1, maximum=1_000_000_000, value=1, step=1, precision=0,
