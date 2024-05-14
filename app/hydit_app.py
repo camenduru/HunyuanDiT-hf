@@ -128,12 +128,12 @@ def ui():
                 with gr.Row():
                     advanced_button = gr.Button(strings['run'])
             with gr.Column():
-                default_img = Image.open(ROOT / 'app/default.png')
+                #default_img = Image.open(ROOT / 'app/default.png')
                 output_img = gr.Image(
                     label=strings['generated image'],
                     interactive=False,
                     format='png',
-                    value=default_img,
+                    #value=default_img,
                 )
             advanced_button.click(
                 fn=infer,
