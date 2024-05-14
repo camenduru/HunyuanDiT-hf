@@ -1,6 +1,8 @@
 import os
 from huggingface_hub import snapshot_download
 import spaces
+import torch
+torch.jit.script = lambda f: f
 os.makedirs("/home/user/app/ckpts", exist_ok=True)
 snapshot_download(repo_id="Tencent-Hunyuan/HunyuanDiT", local_dir="/home/user/app/ckpts")
 
