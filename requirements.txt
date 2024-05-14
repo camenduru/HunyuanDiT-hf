@@ -3,7 +3,7 @@ timm==0.9.5
 diffusers==0.21.2
 peft==0.10.0
 protobuf==3.19.0
-torchvision==0.14.1
+torchvision==0.18.0
 transformers==4.37.2
 accelerate==0.29.3
 loguru==0.7.2
