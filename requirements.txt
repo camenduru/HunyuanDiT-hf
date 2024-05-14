@@ -17,3 +17,4 @@ onnx-graphsurgeon==0.3.27
 polygraphy==0.47.1
 pandas==2.0.3
 gradio==4.31.0
+torch==2.2.0
