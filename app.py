@@ -34,7 +34,7 @@ def get_strings(lang):
 args, gen, enhancer = inferencer()
 strings = get_strings("en")
 
-@spaces.GPU
+@spaces.GPU(duration=80)
 def infer(
     prompt,
     negative_prompt,
