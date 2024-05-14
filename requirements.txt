@@ -1,5 +1,5 @@
 --extra-index-url https://pypi.ngc.nvidia.com
-timm==0.9.5
+timm==0.9.16
 diffusers==0.21.2
 peft==0.10.0
 protobuf==3.19.0
